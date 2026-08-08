@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Globe, Shield } from 'lucide-react';
+import Animate from './Animate';
 
 export default function Footer({ openModal }) {
   return (
@@ -8,6 +9,7 @@ export default function Footer({ openModal }) {
       <div className="container-custom space-y-12">
         
         {/* Main 4-Column Grid */}
+        <Animate variant="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           
           {/* Col 1 & 2: Official Brand Logo & Info */}
@@ -120,6 +122,7 @@ export default function Footer({ openModal }) {
           </div>
 
         </div>
+        </Animate>
 
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-medium">

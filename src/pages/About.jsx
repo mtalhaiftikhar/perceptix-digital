@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Animate from '../components/Animate';
 import { ArrowRight, CheckCircle2, Globe, Shield, Zap, Users, Award, ShieldCheck } from 'lucide-react';
 
 export default function About({ openModal }) {
@@ -38,33 +39,42 @@ export default function About({ openModal }) {
       {/* Intro Header - Centered */}
       <section className="container-custom">
         <div className="w-full max-w-4xl mx-auto text-center space-y-4">
-          <div className="flex justify-center">
-            <span className="badge-teal">Behind Perceptix Digital</span>
-          </div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight">
-            Built to Eliminate the Gaps Between Strategy, Design, and Technical Execution
-          </h1>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-            Most digital projects fail not because of bad intentions, but because the people doing the work are fragmented across different companies, time zones, and priorities.
-          </p>
+          <Animate variant="fade-up" duration="fast">
+            <div className="flex justify-center">
+              <span className="badge-teal">Behind Perceptix Digital</span>
+            </div>
+          </Animate>
+          <Animate variant="fade-up" delay={1}>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight">
+              Built to Eliminate the Gaps Between Strategy, Design, and Technical Execution
+            </h1>
+          </Animate>
+          <Animate variant="fade-up" delay={2}>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+              Most digital projects fail not because of bad intentions, but because the people doing the work are fragmented across different companies, time zones, and priorities.
+            </p>
+          </Animate>
         </div>
       </section>
 
       {/* Dual Hub Structure — Operational Model */}
       <section className="container-custom">
         <div className="glass-card p-6 sm:p-10 md:p-12 space-y-8 border-t-4 border-t-[#00BBA7] bg-white">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <span className="badge-teal">Operational Model</span>
-            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-black">
-              Two Connected Hubs. One Accountable Team.
-            </h2>
-            <p className="text-xs sm:text-base text-gray-600 leading-relaxed">
-              We operate through two dedicated centers of operation designed to give you senior strategy, clear communication, and cost-efficient, high-quality development under one roof.
-            </p>
-          </div>
+          <Animate variant="fade-up">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <span className="badge-teal">Operational Model</span>
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-black">
+                Two Connected Hubs. One Accountable Team.
+              </h2>
+              <p className="text-xs sm:text-base text-gray-600 leading-relaxed">
+                We operate through two dedicated centers of operation designed to give you senior strategy, clear communication, and cost-efficient, high-quality development under one roof.
+              </p>
+            </div>
+          </Animate>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-4">
             {/* US Hub */}
+            <Animate variant="fade-right" delay={1}>
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 border-l-4 border-l-[#00BBA7] space-y-4 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-[#00BBA7]/15 text-[#00BBA7] flex items-center justify-center font-bold font-display">
                 <Globe className="w-5 h-5" />
@@ -88,8 +98,10 @@ export default function About({ openModal }) {
                 </div>
               </div>
             </div>
+            </Animate>
 
             {/* PK Hub */}
+            <Animate variant="fade-left" delay={1}>
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 border-l-4 border-l-[#00BBA7] space-y-4 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-[#00BBA7]/15 text-[#00BBA7] flex items-center justify-center font-bold font-display">
                 <Globe className="w-5 h-5" />
@@ -113,6 +125,7 @@ export default function About({ openModal }) {
                 </div>
               </div>
             </div>
+            </Animate>
           </div>
         </div>
       </section>
@@ -147,7 +160,8 @@ export default function About({ openModal }) {
               {stats.map((stat, i) => {
                 const IconComponent = stat.icon;
                 return (
-                  <div key={i} className="space-y-2 group">
+                  <Animate key={i} variant="fade-up" delay={i + 1}>
+                  <div className="space-y-2 group">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-lg bg-[#00BBA7]/12 text-[#00BBA7] flex items-center justify-center group-hover:scale-110 transition-transform">
                         <IconComponent className="w-4 h-4" />
@@ -165,6 +179,7 @@ export default function About({ openModal }) {
                       {stat.subtext}
                     </p>
                   </div>
+                  </Animate>
                 );
               })}
             </div>
@@ -174,12 +189,15 @@ export default function About({ openModal }) {
 
       {/* Core Beliefs */}
       <section className="container-custom space-y-8 sm:space-y-10">
-        <div className="text-center max-w-xl mx-auto space-y-3">
-          <span className="badge-teal">Principles</span>
-          <h2 className="font-display text-2xl sm:text-3xl font-black text-black">What We Believe</h2>
-        </div>
+        <Animate variant="fade-up">
+          <div className="text-center max-w-xl mx-auto space-y-3">
+            <span className="badge-teal">Principles</span>
+            <h2 className="font-display text-2xl sm:text-3xl font-black text-black">What We Believe</h2>
+          </div>
+        </Animate>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Animate variant="fade-up" delay={1}>
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 border-l-4 border-l-[#00BBA7] space-y-3 shadow-sm">
             <div className="w-10 h-10 rounded-xl bg-[#00BBA7]/15 text-[#00BBA7] flex items-center justify-center font-bold font-display">
               <Shield className="w-5 h-5" />
@@ -189,7 +207,9 @@ export default function About({ openModal }) {
               We prefer starting engagements with fixed prices and defined deliverables. You should know what you're paying for before any work begins.
             </p>
           </div>
+          </Animate>
 
+          <Animate variant="fade-up" delay={2}>
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 border-l-4 border-l-[#00BBA7] space-y-3 shadow-sm">
             <div className="w-10 h-10 rounded-xl bg-[#00BBA7]/15 text-[#00BBA7] flex items-center justify-center font-bold font-display">
               <Zap className="w-5 h-5" />
@@ -199,7 +219,9 @@ export default function About({ openModal }) {
               A website alone won't grow your business. An ad campaign alone won't work without a conversion page. We build connected systems, not standalone deliverables.
             </p>
           </div>
+          </Animate>
 
+          <Animate variant="fade-up" delay={3}>
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 border-l-4 border-l-[#00BBA7] space-y-3 shadow-sm">
             <div className="w-10 h-10 rounded-xl bg-[#00BBA7]/15 text-[#00BBA7] flex items-center justify-center font-bold font-display">
               <Globe className="w-5 h-5" />
@@ -209,11 +231,13 @@ export default function About({ openModal }) {
               We're open about how we work, who does the development, and what things cost. No buzzwords, no inflated headcount claims, no mystery billing.
             </p>
           </div>
+          </Animate>
         </div>
       </section>
 
       {/* CTA - Standard Full Container Width Matching Grid */}
       <section className="container-custom">
+        <Animate variant="fade-up">
         <div className="p-8 sm:p-12 rounded-2xl bg-gray-50 border border-gray-200 text-center space-y-4 w-full">
           <h3 className="font-display text-xl sm:text-2xl font-bold text-black">Ready to Work with an Accountable Team?</h3>
           <p className="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -231,6 +255,7 @@ export default function About({ openModal }) {
             </button>
           </div>
         </div>
+        </Animate>
       </section>
 
     </div>

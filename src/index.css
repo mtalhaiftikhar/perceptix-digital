@@ -221,3 +221,46 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+/* ─── Scroll-Triggered Entrance Animations ───────────────────────────────── */
+
+/* Base hidden state — applied before element enters viewport */
+.anim {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-property: opacity, transform;
+  transition-duration: 0.55s;
+}
+
+/* Visible state — JS adds this class when element enters viewport */
+.anim.in-view {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Variants */
+.anim-fade-up    { transform: translateY(28px); }
+.anim-fade-down  { transform: translateY(-24px); }
+.anim-fade-left  { transform: translateX(28px); }
+.anim-fade-right { transform: translateX(-28px); }
+.anim-fade       { transform: none; }
+.anim-scale      { transform: scale(0.95); }
+.anim-scale-up   { transform: scale(0.92) translateY(16px); }
+
+/* Stagger delay helpers */
+.anim-delay-1  { transition-delay: 0.08s; }
+.anim-delay-2  { transition-delay: 0.16s; }
+.anim-delay-3  { transition-delay: 0.24s; }
+.anim-delay-4  { transition-delay: 0.32s; }
+.anim-delay-5  { transition-delay: 0.40s; }
+.anim-delay-6  { transition-delay: 0.48s; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .anim {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

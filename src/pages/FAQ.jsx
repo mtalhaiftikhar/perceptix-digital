@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ChevronDown, ArrowRight } from 'lucide-react';
+import Animate from '../components/Animate';
 
 export default function FAQ({ openModal }) {
   const navigate = useNavigate();
@@ -64,18 +65,24 @@ export default function FAQ({ openModal }) {
   return (
     <div className="space-y-10 sm:space-y-14 py-8 bg-white text-gray-900">
       
-      {/* Intro Header - Perfectly Centered */}
+      {/* Intro Header */}
       <section className="container-custom">
         <div className="w-full max-w-4xl mx-auto text-center space-y-4">
-          <div className="flex justify-center">
-            <span className="badge-teal">Transparent Answers</span>
-          </div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-            Everything you need to know about our team structure, fixed-price packages, technology stack, and delivery workflow — without the corporate runaround.
-          </p>
+          <Animate variant="fade-up" duration="fast">
+            <div className="flex justify-center">
+              <span className="badge-teal">Transparent Answers</span>
+            </div>
+          </Animate>
+          <Animate variant="fade-up" delay={1}>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight">
+              Frequently Asked Questions
+            </h1>
+          </Animate>
+          <Animate variant="fade-up" delay={2}>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+              Everything you need to know about our team structure, fixed-price packages, technology stack, and delivery workflow — without the corporate runaround.
+            </p>
+          </Animate>
         </div>
       </section>
 
@@ -95,14 +102,14 @@ export default function FAQ({ openModal }) {
         </div>
       </section>
 
-      {/* Accordion List - Perfectly Centered & Full Width */}
+      {/* Accordion List */}
       <section className="container-custom">
         <div className="space-y-4 w-full max-w-4xl mx-auto">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
+              <Animate key={idx} variant="fade-up" delay={Math.min(idx + 1, 6)}>
               <div 
-                key={idx}
                 className={`rounded-2xl transition-all border ${
                   isOpen 
                     ? 'bg-white border-[#00BBA7] shadow-md ring-1 ring-[#00BBA7]/30' 
@@ -128,13 +135,15 @@ export default function FAQ({ openModal }) {
                   </div>
                 )}
               </div>
+              </Animate>
             );
           })}
         </div>
       </section>
 
-      {/* FAQ Closing CTA - Full Container Width */}
+      {/* FAQ Closing CTA */}
       <section className="container-custom">
+        <Animate variant="fade-up">
         <div className="p-8 sm:p-10 rounded-2xl bg-gray-50 border border-gray-200 text-center space-y-4 w-full">
           <h3 className="font-display text-xl sm:text-2xl font-bold text-black">Have a Question That Isn't Answered Here?</h3>
           <p className="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -152,6 +161,7 @@ export default function FAQ({ openModal }) {
             </button>
           </div>
         </div>
+        </Animate>
       </section>
 
     </div>

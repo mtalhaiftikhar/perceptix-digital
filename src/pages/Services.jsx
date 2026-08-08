@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Layers, TrendingUp, Cpu, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Animate from '../components/Animate';
 
 export default function Services({ setActivePage, openModal }) {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -213,10 +214,10 @@ export default function Services({ setActivePage, openModal }) {
       {/* SERVICES GRID */}
       <section className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
+          {filteredServices.map((service, i) => (
+            <Animate key={service.id} variant="scale-up" delay={Math.min((i % 3) + 1, 6)}>
             <div 
-              key={service.id}
-              className="glass-card p-6 sm:p-7 flex flex-col justify-between space-y-6 hover:border-[#00BBA7]/50 group bg-white"
+              className="glass-card p-6 sm:p-7 flex flex-col justify-between space-y-6 hover:border-[#00BBA7]/50 group bg-white h-full"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -257,12 +258,14 @@ export default function Services({ setActivePage, openModal }) {
                 </span>
               </button>
             </div>
+            </Animate>
           ))}
         </div>
       </section>
 
       {/* CLOSING CTA - Full Container Width */}
       <section className="container-custom">
+        <Animate variant="fade-up">
         <div className="p-8 sm:p-10 rounded-2xl bg-gray-50 border border-gray-200 text-center space-y-4 w-full">
           <h3 className="font-display text-xl sm:text-2xl font-bold text-black">Not Sure Which Services You Need?</h3>
           <p className="text-xs sm:text-sm text-gray-600 max-w-md mx-auto">
@@ -280,6 +283,7 @@ export default function Services({ setActivePage, openModal }) {
             </button>
           </div>
         </div>
+        </Animate>
       </section>
 
     </div>
