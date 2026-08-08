@@ -319,7 +319,7 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-[#00BBA7] shrink-0" />
-                  <span>Virtual US Address: Delaware / US Operations Hub</span>
+                  <span>12436 FM 1960 Rd W, Houston, TX 77065</span>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function Contact() {
               <div className="space-y-2.5 pt-1 text-xs text-gray-700 font-medium">
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-[#00BBA7] shrink-0" />
-                  <span>Pakistan Office Hub: Karachi, Pakistan</span>
+                  <span>Shah Faisal Colony, Karachi, Pakistan</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <ShieldCheck className="w-4 h-4 text-[#00BBA7] shrink-0" />
