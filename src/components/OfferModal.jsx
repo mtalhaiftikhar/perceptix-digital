@@ -116,7 +116,7 @@ export default function OfferModal({ isOpen, onClose, selectedPackage }) {
             </div>
             <h3 className="font-display text-2xl font-bold text-black">Inquiry Sent</h3>
             <p className="text-xs sm:text-sm text-gray-600 max-w-sm mx-auto">
-              Thank you, <strong className="text-black">{formData.name}</strong>. Your inquiry has been sent directly to <strong className="text-[#00BBA7]">hello@perceptixdigital.com</strong> via Hostinger SMTP. Our strategy team will respond within 24 hours.
+              Thank you, <strong className="text-black">{formData.name}</strong>. Your inquiry has been sent directly to <strong className="text-[#00BBA7]">hello@perceptixdigital.com</strong>. Our strategy team will respond within 24 hours.
             </p>
             <div className="pt-4 flex justify-center">
               <button
