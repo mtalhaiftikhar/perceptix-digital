@@ -81,6 +81,16 @@ export default function SEOManager() {
     }
     ogDescription.setAttribute('content', meta.description);
 
+    // Update Canonical URL for Search Engines
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    const currentUrl = `https://perceptixdigital.com${pathname === '/' ? '' : pathname}`;
+    canonicalLink.setAttribute('href', currentUrl);
+
   }, [pathname]);
 
   return null;
